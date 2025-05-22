@@ -1,5 +1,5 @@
 // Polling-based Whiteboard client
-const ROOM_ID = "<ROOM_ID>"; // replace after gen_config
+const ROOM_ID = "room_7572"; // replace after gen_config
 const API = "http://localhost:8000";
 
 const canvas = document.getElementById('board');

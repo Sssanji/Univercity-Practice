@@ -1,7 +1,18 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from config import ROOM_ID, FILTERS
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://127.0.0.1:8001"],  # або ["*"], щоб дозволити всі походження
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+
+
 _store = []
 
 @app.post("/draw/{room_id}")
