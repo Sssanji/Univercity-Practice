@@ -1,1 +1,2 @@
-# Univercity-Practice
+# Whiteboard Polling
+# Виконав: Іваненко Богдан
