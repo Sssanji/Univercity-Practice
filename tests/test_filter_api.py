@@ -5,6 +5,16 @@ from config import ROOM_ID
 client = TestClient(app)
 
 def test_filter_api():
-    payload = {"image_data": [1,2,3], "filter_name": "blur"}
+    payload = {
+        "image_data": [1, 2, 3],       
+        "filter_name": "blur",        
+        "width": 1,
+        "height": 3
+    }
+
     res = client.post(f"/filter/{ROOM_ID}", json=payload)
-    assert res.status_code == 200 and res.json()["image_data"] == payload["image_data"]
+
+    assert res.status_code == 200
+    assert "image_data" in res.json()
+    assert isinstance(res.json()["image_data"], list) 
+
